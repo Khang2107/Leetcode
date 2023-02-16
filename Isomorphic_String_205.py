@@ -10,44 +10,22 @@
 s = "badc"
 t = "baba"
 
-countS1 = 0
-countT1 = 0
+dictS = {}
+dictT = {}
 
-# for i in s:
-#     for j in t:
-#         if s.count() == j.count():
-#             print("true")
-#         else:
-#             print("false")
+def isSomorphic(self, s: str, t: str) -> bool:
+    for i in range(len(s)):
+        if s[i] in dictS and dictS[s[i]] != t[i]:
+            return False
+        if t[i] in dictS and dictT[t[i]] != s[i]:
+            return False
+        
+        dictS[s[i]] = t[i]
+        dictT[t[i]] = s[i]
+    return True
 
-for i in s:
-    countS1 = s.count(i)
-    
-for j in t:
-    countT1 = t.count(j)
-    
-if countS1 == countT1:
-    print("true")
-else:
-    print("false")
+def isSomorphic(self, s: str, t: str) -> bool:
+    return [s.find(i) for i in s] == [t.find(i) for i in t]
 
-# # count S
-# countS = 0;
-# for i in range(len(s)-1):
-#     if s[i] == s[i+1]:
-#         countS += 1        
-# print(countS)
-
-
-# # count T
-# countT = 0;
-# for i in range(len(t)-1):
-#     if t[i] == t[i+1]:
-#         countT += 1
-# print(countT)
-
-
-# if countS == countT:
-#     print("true")
-# else:
-#     print("false")
+def isSomorphic(self, s: str, t: str) -> bool:
+    return map(s.find, s) == map(t.find, t)
