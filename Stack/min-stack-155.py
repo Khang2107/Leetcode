@@ -1,10 +1,3 @@
-#
-# @lc app=leetcode id=155 lang=python
-#
-# [155] Min Stack
-#
-
-# @lc code=start
 class minStack(object):
     def __init__(self):
         self.stack = []
@@ -45,12 +38,3 @@ class minStack(object):
         """
         # return smallest val = top of minStack
         return self.minStack[-1]
-
-
-# Your MinStack object will be instantiated and called as such:
-# obj = MinStack()
-# obj.push(val)
-# obj.pop()
-# param_3 = obj.top()
-# param_4 = obj.getMin()
-# @lc code=end
